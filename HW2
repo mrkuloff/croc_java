@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String[] units = new String[] {"B", "KB", "MB", "GB", "TB"};
+        System.out.print("printBytes = ");
+        double sizeInUnits = scanner.nextDouble();
+        int unitNumber = 0;
+        while (sizeInUnits >= 1024) {
+            sizeInUnits /= 1024;
+            unitNumber++;
+        }
+        System.out.print(String.format("%.1f",sizeInUnits) + " " + units[unitNumber]);
+    }
+}
